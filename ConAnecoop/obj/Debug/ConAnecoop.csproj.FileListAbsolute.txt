@@ -1,0 +1,6 @@
+C:\Proyectos\ConAnecoop\ConAnecoop\bin\Debug\ConAnecoop.exe.config
+C:\Proyectos\ConAnecoop\ConAnecoop\bin\Debug\ConAnecoop.exe
+C:\Proyectos\ConAnecoop\ConAnecoop\bin\Debug\ConAnecoop.pdb
+C:\Proyectos\ConAnecoop\ConAnecoop\obj\Debug\ConAnecoop.csprojResolveAssemblyReference.cache
+C:\Proyectos\ConAnecoop\ConAnecoop\obj\Debug\ConAnecoop.exe
+C:\Proyectos\ConAnecoop\ConAnecoop\obj\Debug\ConAnecoop.pdb
