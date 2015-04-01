@@ -4,3 +4,9 @@ C:\Proyectos\ConAnecoop\ConAnecoop\bin\Debug\ConAnecoop.pdb
 C:\Proyectos\ConAnecoop\ConAnecoop\obj\Debug\ConAnecoop.csprojResolveAssemblyReference.cache
 C:\Proyectos\ConAnecoop\ConAnecoop\obj\Debug\ConAnecoop.exe
 C:\Proyectos\ConAnecoop\ConAnecoop\obj\Debug\ConAnecoop.pdb
+C:\Proyectos\ConAneccop\ConAnecoop\bin\Debug\ConAnecoop.exe.config
+C:\Proyectos\ConAneccop\ConAnecoop\obj\Debug\ConAnecoop.exe
+C:\Proyectos\ConAneccop\ConAnecoop\obj\Debug\ConAnecoop.pdb
+C:\Proyectos\ConAneccop\ConAnecoop\bin\Debug\ConAnecoop.exe
+C:\Proyectos\ConAneccop\ConAnecoop\bin\Debug\ConAnecoop.pdb
+C:\Proyectos\ConAneccop\ConAnecoop\obj\Debug\ConAnecoop.csprojResolveAssemblyReference.cache

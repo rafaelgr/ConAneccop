@@ -155,6 +155,8 @@ namespace ConAnecoop
                 string salida_linea_id = exp.SALIDALINEAID;
 
                 // Grabación en base de datos
+                // VRS 1.0.0.2
+                // Se ha eliminado del update "numero_salida_cooperativa='{11}', "
                 string sql = @"insert into anecoop(expediente_id, pdls_id, linea_expediente, codigo_campanya, 
                     periodo, codigo_cooperativa_gestora, nombre_gestora, codigo_cooperativa_carga, 
                     nombre_carga, pto_carga, nombre_pto_carga, numero_salida_cooperativa, 
@@ -183,7 +185,7 @@ namespace ConAnecoop
                     ON DUPLICATE KEY UPDATE
                     pdls_id='{1}',
                     periodo='{4}', codigo_cooperativa_gestora='{5}', nombre_gestora='{6}', codigo_cooperativa_carga='{7}', 
-                    nombre_carga='{8}', pto_carga='{9}', nombre_pto_carga='{10}', numero_salida_cooperativa='{11}', 
+                    nombre_carga='{8}', pto_carga='{9}', nombre_pto_carga='{10}', 
                     nlinea_salida_cooperativa='{12}', n_pedido_aneccop='{13}', n_pedido='{14}', n_linea='{15}',
                     tipo_expediente='{16}', estado_coop_expediente='{17}', expediente_reenviado='{18}', codigo_delegacion='{19}',
                     nombre_delegacion='{20}', codigo_area='{21}', nombre_area='{22}', fecha_salida='{23:yyyy-MM-dd}', matricula='{24}', tipo_vehiculo='{25}',
