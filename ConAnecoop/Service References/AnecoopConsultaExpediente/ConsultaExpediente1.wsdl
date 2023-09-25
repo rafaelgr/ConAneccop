@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import />
+      <s:element name="DescargaPedidos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuarioCodigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaInicio" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaFin" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="salidaCoopNumero" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expedienteID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numeroFactura" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaFacturaInicio" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaFacturaFin" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoCampanya" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DescargaPedidosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="DescargaPedidosResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified">
+      <s:element name="DescargaPedidosResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="Expediente" type="JSVExpedienteXmlExpediente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="JSVExpedienteXmlExpediente">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EXPEDIENTE_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pdls_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LINEA_EXPEDIENTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO_CAMPANYA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PERIODO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CODIGO_COOPERATIVA_GESTORA" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_GESTORA" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CODIGO_COOPERATIVA_CARGA" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_CARGA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PTO_CARGA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_PTO_CARGA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NUMERO_SALIDA_COOPERATIVA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="N_LINEA_SALIDA_COOPERATIVA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="N_PEDIDO_ANECOOP" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="N_PEDIDO" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="N_LINEA" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPO_EXPEDIENTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESTADO_COOP_EXPEDIENTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EXPEDIENTE_REENVIADO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO_DELEGACION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_DELEGACION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO_AREA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_AREA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHA_SALIDA" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="MATRICULA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPO_VEHICULO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CATEGORIA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_CATEGORIA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO_CONFECCION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_CONFECCION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO_UVENTA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_UVENTA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO_ETRANSPORTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_ETRANSPORTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO_MODELO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_MODELO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO_MATERIAL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_MATERIAL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO_MARCA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_MARCA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO_VARIEDAD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_VARIEDAD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO_ARTICULO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_ARTICULO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO_CLIENTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRECLIENTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO_PAIS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO_DIVISA_CLIENTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO_PRODUCTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_PRODUCTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO_CALIBRE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_CALIBRE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NPALET" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPO_PALET" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE_TIPO_PALET" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NCAJAS" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PESO_NETO" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PRECIO_COMERCIAL" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO_DIVISA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LIQUIDADO_SON" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESTADO_COOP_LIQUIDACION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LIQUIDACION_AGRUPADA_SON" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO_GRUPO_LIQUIDACION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NUM_LIQ" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="FRA_LIQ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FRA_LIQ_COMPLEMENTA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CARTA_LIQ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="REGISTRO_LIQ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IMPORTE_LIQ" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="IMPORTE_IVA_LIQ" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPO_IVA_LIQ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHA_LIQ" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHA_CAMBIO_LIQ" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CAMBIO_LIQ" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHA_SC_LIQ" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="PORCENT_IVA_LIQ" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="IMPORTE2_IVA_LIQ" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="COBRADO_SON" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PAGADO_SON" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VALOR_MERCANCIA" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="VALOR_CONFECCION" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="NUMERO_SALIDA_ANECOOP" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="SALIDALINEAID" type="s:integer" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO_TIPO_ARTICULO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EAN13" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UNIDAD_PESO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EXPEDIENTE_PAGO" type="JSVExpedienteXmlPago" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EXPEDIENTE_COBRO">
+            <s:complexType>
+              <s:sequence>
+                <s:element minOccurs="0" maxOccurs="1" name="EXPEDIENTE_COBROID" type="s:string" />
+                <s:element minOccurs="0" maxOccurs="1" name="EXPEDIENTE_ID" type="s:string" />
+                <s:element minOccurs="0" maxOccurs="1" name="NUMERO_REMESA" type="s:string" />
+                <s:element minOccurs="1" maxOccurs="1" name="IMPORTE_CAMBIO" type="s:decimal" />
+                <s:element minOccurs="1" maxOccurs="1" name="FECHA_CAMBIO" type="s:dateTime" />
+                <s:element minOccurs="0" maxOccurs="1" name="ESTADO" type="s:string" />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="REGIMEN_SUSPENSIVO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD_DIRECCION_DESTINO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DIRECCION_DESTINO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_FICHA_ARTICULO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OP_SON" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RESPONSABLE_COMPRA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NIF" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="JSVExpedienteXmlPago">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EXPEDIENTE_PAGOID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EXPEDIENTE_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPO_PAGO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NUM_FACTURA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHA_FACTURA" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="NUM_LIQUIDACION" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IMPORTE" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHA_PAGO" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHA_PAGO_SC" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESTADO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DescargaPedidosSoapIn">
+    <wsdl:part name="parameters" element="tns:DescargaPedidos" />
+  </wsdl:message>
+  <wsdl:message name="DescargaPedidosSoapOut">
+    <wsdl:part name="parameters" element="tns:DescargaPedidosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ConsultaExpedienteSoap">
+    <wsdl:operation name="DescargaPedidos">
+      <wsdl:input message="tns:DescargaPedidosSoapIn" />
+      <wsdl:output message="tns:DescargaPedidosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ConsultaExpedienteHttpGet" />
+  <wsdl:portType name="ConsultaExpedienteHttpPost" />
+  <wsdl:binding name="ConsultaExpedienteSoap" type="tns:ConsultaExpedienteSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DescargaPedidos">
+      <soap:operation soapAction="http://tempuri.org/DescargaPedidos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConsultaExpedienteSoap12" type="tns:ConsultaExpedienteSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DescargaPedidos">
+      <soap12:operation soapAction="http://tempuri.org/DescargaPedidos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConsultaExpedienteHttpGet" type="tns:ConsultaExpedienteHttpGet">
+    <http:binding verb="GET" />
+  </wsdl:binding>
+  <wsdl:binding name="ConsultaExpedienteHttpPost" type="tns:ConsultaExpedienteHttpPost">
+    <http:binding verb="POST" />
+  </wsdl:binding>
+  <wsdl:service name="ConsultaExpediente">
+    <wsdl:port name="ConsultaExpedienteSoap" binding="tns:ConsultaExpedienteSoap">
+      <soap:address location="https://anecoopintegracion.anecoop.com/ServiciosWeb/ConsultaExpediente.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConsultaExpedienteSoap12" binding="tns:ConsultaExpedienteSoap12">
+      <soap12:address location="https://anecoopintegracion.anecoop.com/ServiciosWeb/ConsultaExpediente.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConsultaExpedienteHttpGet" binding="tns:ConsultaExpedienteHttpGet">
+      <http:address location="https://anecoopintegracion.anecoop.com/ServiciosWeb/ConsultaExpediente.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConsultaExpedienteHttpPost" binding="tns:ConsultaExpedienteHttpPost">
+      <http:address location="https://anecoopintegracion.anecoop.com/ServiciosWeb/ConsultaExpediente.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

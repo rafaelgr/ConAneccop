@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://anecoopintegracion.anecoop.com/ServiciosWeb/ConsultaExpediente.asmx?wsdl" docRef="https://anecoopintegracion.anecoop.com/ServiciosWeb/ConsultaExpediente.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://anecoopintegracion.anecoop.com/ServiciosWeb/ConsultaExpediente.asmx" xmlns:q1="http://tempuri.org/" binding="q1:ConsultaExpedienteSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://anecoopintegracion.anecoop.com/ServiciosWeb/ConsultaExpediente.asmx" xmlns:q2="http://tempuri.org/" binding="q2:ConsultaExpedienteSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

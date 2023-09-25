@@ -9,3 +9,11 @@ C:\Proyectos\ConAneccop\ConAnecoop\obj\Debug\ConAnecoop.exe
 C:\Proyectos\ConAneccop\ConAnecoop\obj\Debug\ConAnecoop.pdb
 C:\Proyectos\ConAneccop\ConAnecoop\bin\Debug\ConAnecoop.exe
 C:\Proyectos\ConAneccop\ConAnecoop\bin\Debug\ConAnecoop.pdb
+D:\CPROYECTOS\ConAneccop\ConAnecoop\bin\Debug\ConAnecoop.exe.config
+D:\CPROYECTOS\ConAneccop\ConAnecoop\obj\Debug\ConAnecoop.exe
+D:\CPROYECTOS\ConAneccop\ConAnecoop\obj\Debug\ConAnecoop.pdb
+D:\CPROYECTOS\ConAneccop\ConAnecoop\bin\Debug\ConAnecoop.exe
+D:\CPROYECTOS\ConAneccop\ConAnecoop\bin\Debug\ConAnecoop.pdb
+D:\CPROYECTOS\ConAneccop\ConAnecoop\obj\Debug\ConAnecoop.csproj.AssemblyReference.cache
+D:\CPROYECTOS\ConAneccop\ConAnecoop\obj\Debug\ConAnecoop.csproj.CoreCompileInputs.cache
+D:\CPROYECTOS\ConAneccop\ConAnecoop\obj\Debug\ConAnecoop.csproj.CopyComplete

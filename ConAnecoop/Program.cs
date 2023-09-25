@@ -1,21 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ConAnecoop.AnecoopConsultaExpediente;
 using ConAnecoop.AnecoopLogin;
 using MySql.Data.MySqlClient;
 using System.IO;
 using System.Reflection;
 
-
 namespace ConAnecoop
 {
     class Program
     {
-
+        [Obsolete]
         static void Main(string[] args)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["AriAgro"].ConnectionString;
@@ -76,15 +71,19 @@ namespace ConAnecoop
             string sky = stk.SessionKey;
             if (informa) Console.WriteLine("Permiso recibido, clave de sesión ({0})", sky);
 
-            JSVConsultaExpedienteSoapClient cliente = new JSVConsultaExpedienteSoapClient("JSVConsultaExpedienteSoap");
+            // JSVConsultaExpedienteSoapClient cliente = new JSVConsultaExpedienteSoapClient("JSVConsultaExpedienteSoap");
+            AnecoopConsultaExpediente.ConsultaExpedienteSoapClient cliente = new AnecoopConsultaExpediente.ConsultaExpedienteSoapClient("ConsultaExpedienteSoap");
+
             if (informa) Console.WriteLine("Pidiendo expedientes, espere...");
             DateTime dt1 = DateTime.Now;
-            DescargaPedidosResultExpediente[] res = cliente.DescargaPedidos(cooperativa, sky, fechaInicio, fechaFin, null, null, null, null, null, null, campanya);
+            //DescargaPedidosResultExpediente[] res = cliente.DescargaPedidos(cooperativa, sky, fechaInicio, fechaFin, null, null, null, null, null, null, campanya);
+
+            AnecoopConsultaExpediente.JSVExpedienteXmlExpediente[] res = cliente.DescargaPedidos(cooperativa, sky, fechaInicio, fechaFin, null, null, null, null, null, null, campanya);
             DateTime dt2 = DateTime.Now;
             if (informa) Console.WriteLine("Tiempo de petición --> Inicio: {0:dd/MM/yyyy HH:mm:ss} Fin:{1:dd/MM/yyyy HH:mm:ss}", dt1, dt2);
             int totReg = res.Length;
             int numReg = 0;
-            foreach (DescargaPedidosResultExpediente exp in res)
+            foreach (AnecoopConsultaExpediente.JSVExpedienteXmlExpediente exp in res)
             {
                 string expediente_id = exp.EXPEDIENTE_ID;
                 string pdls_id = exp.pdls_id;
@@ -238,10 +237,11 @@ namespace ConAnecoop
                     pagado_son, valor_mercancia.ToString().Replace(",", "."), valor_confeccion.ToString().Replace(",", "."), numero_salida_aneccop, salida_linea_id);
                 cmd.CommandText = sql;
                 cmd.ExecuteNonQuery();
-                DescargaPedidosResultExpedienteEXPEDIENTE_PAGO[] pagos = exp.EXPEDIENTE_PAGO;
+                // DescargaPedidosResultExpedienteEXPEDIENTE_PAGO[] pagos = exp.EXPEDIENTE_PAGO;
+                AnecoopConsultaExpediente.JSVExpedienteXmlPago[] pagos = exp.EXPEDIENTE_PAGO;
                 if (pagos != null)
                 {
-                    foreach (DescargaPedidosResultExpedienteEXPEDIENTE_PAGO pago in pagos)
+                    foreach (AnecoopConsultaExpediente.JSVExpedienteXmlPago pago in pagos)
                     {
                         string expediente_pagoid = pago.EXPEDIENTE_PAGOID;
                         string expedientep_id = pago.EXPEDIENTE_ID;
@@ -266,10 +266,11 @@ namespace ConAnecoop
                     }
                 }
 
-                DescargaPedidosResultExpedienteEXPEDIENTE_COBRO[] cobros = exp.EXPEDIENTE_COBRO;
+                // DescargaPedidosResultExpedienteEXPEDIENTE_COBRO[] cobros = exp.EXPEDIENTE_COBRO;
+                AnecoopConsultaExpediente.JSVExpedienteXmlExpedienteEXPEDIENTE_COBRO[] cobros = exp.EXPEDIENTE_COBRO;
                 if (cobros != null)
                 {
-                    foreach (DescargaPedidosResultExpedienteEXPEDIENTE_COBRO cobro in cobros)
+                    foreach (AnecoopConsultaExpediente.JSVExpedienteXmlExpedienteEXPEDIENTE_COBRO cobro in cobros)
                     {
                         string expediente_cobroid = cobro.EXPEDIENTE_COBROID;
                         string expedientec_id = cobro.EXPEDIENTE_ID;
@@ -312,15 +313,17 @@ namespace ConAnecoop
             string sky = stk.SessionKey;
             if (informa) Console.WriteLine("Permiso recibido, clave de sesión ({0})", sky);
 
-            JSVConsultaExpedienteSoapClient cliente = new JSVConsultaExpedienteSoapClient("JSVConsultaExpedienteSoap");
+            // JSVConsultaExpedienteSoapClient cliente = new JSVConsultaExpedienteSoapClient("JSVConsultaExpedienteSoap");
+            AnecoopConsultaExpediente.ConsultaExpedienteSoapClient cliente = new AnecoopConsultaExpediente.ConsultaExpedienteSoapClient("ConsultaExpedienteSoap");
             if (informa) Console.WriteLine("Pidiendo expedientes, espere...");
             DateTime dt1 = DateTime.Now;
-            DescargaPedidosResultExpediente[] res = cliente.DescargaPedidos(cooperativa, sky, fechaInicio, fechaFin, null, null, null, null, null, null, campanya);
+            // DescargaPedidosResultExpediente[] res = cliente.DescargaPedidos(cooperativa, sky, fechaInicio, fechaFin, null, null, null, null, null, null, campanya);
+            AnecoopConsultaExpediente.JSVExpedienteXmlExpediente[] res = cliente.DescargaPedidos(cooperativa, sky, fechaInicio, fechaFin, null, null, null, null, null, null, campanya);
             DateTime dt2 = DateTime.Now;
             if (informa) Console.WriteLine("Tiempo de petición --> Inicio: {0:dd/MM/yyyy HH:mm:ss} Fin:{1:dd/MM/yyyy HH:mm:ss}", dt1, dt2);
             int totReg = res.Length;
             int numReg = 0;
-            foreach (DescargaPedidosResultExpediente exp in res)
+            foreach (AnecoopConsultaExpediente.JSVExpedienteXmlExpediente exp in res)
             {
                 // para controlar bloqueados
                 bool bloqueado = false;
@@ -557,10 +560,11 @@ namespace ConAnecoop
                 cmd.ExecuteNonQuery();
 
                 // Procesamiento de los pagos de este expediente
-                DescargaPedidosResultExpedienteEXPEDIENTE_PAGO[] pagos = exp.EXPEDIENTE_PAGO;
+                // DescargaPedidosResultExpedienteEXPEDIENTE_PAGO[] pagos = exp.EXPEDIENTE_PAGO;
+                AnecoopConsultaExpediente.JSVExpedienteXmlPago[] pagos = exp.EXPEDIENTE_PAGO;
                 if (pagos != null)
                 {
-                    foreach (DescargaPedidosResultExpedienteEXPEDIENTE_PAGO pago in pagos)
+                    foreach (AnecoopConsultaExpediente.JSVExpedienteXmlPago pago in pagos)
                     {
                         string expediente_pagoid = pago.EXPEDIENTE_PAGOID;
                         string expedientep_id = pago.EXPEDIENTE_ID;
@@ -622,10 +626,11 @@ namespace ConAnecoop
                     }
                 }
 
-                DescargaPedidosResultExpedienteEXPEDIENTE_COBRO[] cobros = exp.EXPEDIENTE_COBRO;
+                //DescargaPedidosResultExpedienteEXPEDIENTE_COBRO[] cobros = exp.EXPEDIENTE_COBRO;
+                AnecoopConsultaExpediente.JSVExpedienteXmlExpedienteEXPEDIENTE_COBRO[] cobros = exp.EXPEDIENTE_COBRO;
                 if (cobros != null)
                 {
-                    foreach (DescargaPedidosResultExpedienteEXPEDIENTE_COBRO cobro in cobros)
+                    foreach (AnecoopConsultaExpediente.JSVExpedienteXmlExpedienteEXPEDIENTE_COBRO cobro in cobros)
                     {
                         string expediente_cobroid = cobro.EXPEDIENTE_COBROID;
                         string expedientec_id = cobro.EXPEDIENTE_ID;

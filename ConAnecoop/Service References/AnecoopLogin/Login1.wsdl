@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.anecoop.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.anecoop.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://www.anecoop.com/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://www.anecoop.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://www.anecoop.com/">
       <s:element name="CheckLogin">
@@ -118,16 +118,16 @@
   </wsdl:binding>
   <wsdl:service name="Login">
     <wsdl:port name="LoginSoap" binding="tns:LoginSoap">
-      <soap:address location="http://anecoopintegracion.anecoop.com/ServiciosWeb/Login.asmx" />
+      <soap:address location="https://anecoopintegracion.anecoop.com/ServiciosWeb/Login.asmx" />
     </wsdl:port>
     <wsdl:port name="LoginSoap12" binding="tns:LoginSoap12">
-      <soap12:address location="http://anecoopintegracion.anecoop.com/ServiciosWeb/Login.asmx" />
+      <soap12:address location="https://anecoopintegracion.anecoop.com/ServiciosWeb/Login.asmx" />
     </wsdl:port>
     <wsdl:port name="LoginHttpGet" binding="tns:LoginHttpGet">
-      <http:address location="http://anecoopintegracion.anecoop.com/ServiciosWeb/Login.asmx" />
+      <http:address location="https://anecoopintegracion.anecoop.com/ServiciosWeb/Login.asmx" />
     </wsdl:port>
     <wsdl:port name="LoginHttpPost" binding="tns:LoginHttpPost">
-      <http:address location="http://anecoopintegracion.anecoop.com/ServiciosWeb/Login.asmx" />
+      <http:address location="https://anecoopintegracion.anecoop.com/ServiciosWeb/Login.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

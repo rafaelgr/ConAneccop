@@ -64,14 +64,13 @@
     <None Include="Service References\AnecoopConsultaExpediente\ConAnecoop.AnecoopConsultaExpediente.DescargaPedidosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\AnecoopConsultaExpediente\ConAnecoop.AnecoopConsultaExpediente.DescargaPedidosResultExpediente.datasource">
+    <None Include="Service References\AnecoopConsultaExpediente\ConAnecoop.AnecoopConsultaExpediente.JSVExpedienteXmlExpediente.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\AnecoopConsultaExpediente\ConsultaExpediente.wsdl" />
+    <None Include="Service References\AnecoopConsultaExpediente\ConsultaExpediente1.wsdl" />
     <None Include="Service References\AnecoopLogin\ConAnecoop.AnecoopLogin.ServiceTicket.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\AnecoopLogin\Login.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -81,22 +80,17 @@
     <WCFMetadataStorage Include="Service References\AnecoopLogin\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AnecoopLogin\Login.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\AnecoopLogin\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\AnecoopLogin\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\AnecoopLogin\Login1.wsdl" />
     <None Include="Service References\AnecoopLogin\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\AnecoopConsultaExpediente\ConsultaExpediente.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\AnecoopConsultaExpediente\configuration91.svcinfo" />
@@ -109,6 +103,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AnecoopLogin\Login1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AnecoopConsultaExpediente\ConsultaExpediente1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
